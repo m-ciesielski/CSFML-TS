@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CSFML_TS" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CSFML_RTS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="csfml-audio" />
+					<Add library="csfml-graphics" />
+					<Add library="csfml-network" />
+					<Add library="csfml-system" />
+					<Add library="csfml-window" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CSFML_RTS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DCSFML_STATIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="csfml-audio" />
+					<Add library="csfml-graphics" />
+					<Add library="csfml-network" />
+					<Add library="csfml-system" />
+					<Add library="csfml-window" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="G:/C++/CSFML-2.1/include" />
+		</Compiler>
+		<Linker>
+			<Add library="csfml-graphics" />
+			<Add library="csfml-window" />
+			<Add library="csfml-system" />
+			<Add library="mingw32" />
+			<Add library="dxguid" />
+			<Add directory="G:/C++/CSFML-2.1/lib/gcc" />
+		</Linker>
+		<Unit filename="UI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="auxilary.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="combat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="definicje_typow.h" />
+		<Unit filename="flora.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib.h" />
+		<Unit filename="log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mech.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="messages.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="movement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

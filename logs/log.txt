@@ -1,0 +1,112 @@
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 9 ludzi i trac¹c 6 ludzi. Atak z flanki: 1, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 1 ludzi i trac¹c 6 ludzi. Atak z flanki: 1, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 8 ludzi i trac¹c 6 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 8 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 6 ludzi i trac¹c 6 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Evocati gracza 1 , [id]:7 przemiescila sie na pole: 5, 4.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 10 ludzi i trac¹c 6 ludzi. Atak z flanki: 1, szarza: 1.
+Jednostka Evocati gracza 1 , [id]:9 przemiescila sie na pole: 8, 7.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 6 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Evocati gracza 1 , [id]:8 przemiescila sie na pole: 7, 6.
+Jednostka Pedites Singulares gracza 1 , [id]:0 przemiescila sie na pole: 6, 4.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 8 ludzi i trac¹c 6 ludzi. Atak z flanki: 1, szarza: 1.
+Jednostka Evocati gracza 1 , [id]:11 przemiescila sie na pole: 9, 8.
+Jednostka Sagittari_Auxilari, ostrzelala jednostke Cingetos, zadaj¹c 20 obra¿eñ.
+Jednostka Evocati gracza 1 , [id]:4 przemiescila sie na pole: 6, 5.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 7 ludzi i trac¹c 8 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 10 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 0.
+Jednostka Sotaroas, ostrzelala jednostke Evocati, zadaj¹c 20 obra¿eñ.
+Jednostka Cingetos gracza 2 , [id]:9 przemiescila sie na pole: 8, 8.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:8 przemiescila sie na pole: 7, 7.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:7 przemiescila sie na pole: 6, 7.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:6 przemiescila sie na pole: 5, 6.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 7 ludzi i trac¹c 8 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:4 przemiescila sie na pole: 4, 6.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 8 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:3 przemiescila sie na pole: 3, 6.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 10 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:2 przemiescila sie na pole: 2, 5.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 9 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:1 przemiescila sie na pole: 3, 4.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 6 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Evocati, zaatakowala jednostke Cingetos, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Sagittari_Auxilari, ostrzelala jednostke Solduros, zadaj¹c 20 obra¿eñ.
+Jednostka Evocati, ostrzelala jednostke Cingetos, zadaj¹c 20 obra¿eñ.
+Jednostka Evocati, ostrzelala jednostke Cingetos, zadaj¹c 20 obra¿eñ.
+Jednostka Evocati, ostrzelala jednostke Cingetos, zadaj¹c 20 obra¿eñ.
+Jednostka Evocati, ostrzelala jednostke Cingetos, zadaj¹c 20 obra¿eñ.
+Jednostka Pedites Singulares, ostrzelala jednostke Cingetos, zadaj¹c 10 obra¿eñ.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 7 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 9 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 0.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 8 ludzi i trac¹c 7 ludzi. Atak z flanki: 1, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:1 przemiescila sie na pole: 2, 5.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 6 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:4 przemiescila sie na pole: 5, 6.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:3 przemiescila sie na pole: 4, 6.
+Jednostka Cingetos, zaatakowala jednostke Evocati, eliminujac 6 ludzi i trac¹c 7 ludzi. Atak z flanki: 0, szarza: 1.
+Jednostka Cingetos gracza 2 , [id]:2 przemiescila sie na pole: 3, 6.
+Jednostka Solduros gracza 2 , [id]:0 przemiescila sie na pole: 4, 7.
+Jednostka Sotaroas, ostrzelala jednostke Evocati, zadaj¹c 20 obra¿eñ.
+Jednostka Cingetos gracza 2 , [id]:9 przemiescila sie na pole: 9, 8.
+Jednostka Cingetos gracza 2 , [id]:8 przemiescila sie na pole: 8, 7.
+Jednostka Cingetos gracza 2 , [id]:7 przemiescila sie na pole: 7, 7.
+Jednostka Cingetos gracza 2 , [id]:6 przemiescila sie na pole: 6, 7.
+Jednostka Evocati gracza 1 , [id]:2 przemiescila sie na pole: 3, 5.
+Jednostka Evocati gracza 1 , [id]:1 przemiescila sie na pole: 4, 5.
+Jednostka Catapulta gracza 1 , [id]:10 przemiescila sie na pole: 10, 4.
+Jednostka Sagittari_Auxilari gracza 1 , [id]:5 przemiescila sie na pole: 7, 4.
+Jednostka Cingetos gracza 2 , [id]:9 przemiescila sie na pole: 10, 8.
+Jednostka Cingetos gracza 2 , [id]:8 przemiescila sie na pole: 9, 8.
+Jednostka Cingetos gracza 2 , [id]:7 przemiescila sie na pole: 8, 8.
+Jednostka Cingetos gracza 2 , [id]:6 przemiescila sie na pole: 7, 8.
+Jednostka Sotaroas gracza 2 , [id]:5 przemiescila sie na pole: 6, 9.
+Jednostka Cingetos gracza 2 , [id]:4 przemiescila sie na pole: 6, 8.
+Jednostka Cingetos gracza 2 , [id]:3 przemiescila sie na pole: 5, 8.
+Jednostka Cingetos gracza 2 , [id]:2 przemiescila sie na pole: 4, 8.
+Jednostka Cingetos gracza 2 , [id]:1 przemiescila sie na pole: 3, 8.
+Jednostka Solduros gracza 2 , [id]:0 przemiescila sie na pole: 4, 9.
+Jednostka Evocati gracza 1 , [id]:2 przemiescila sie na pole: 2, 5.
+Jednostka Evocati gracza 1 , [id]:1 przemiescila sie na pole: 3, 5.
+Jednostka Pedites Singulares gracza 1 , [id]:0 przemiescila sie na pole: 4, 4.
+Jednostka Catapulta gracza 1 , [id]:10 przemiescila sie na pole: 10, 4.
+Jednostka Evocati gracza 1 , [id]:11 przemiescila sie na pole: 11, 5.
+Jednostka Sagittari_Auxilari gracza 1 , [id]:5 przemiescila sie na pole: 7, 4.
+Jednostka Evocati gracza 1 , [id]:4 przemiescila sie na pole: 6, 5.
+Jednostka Evocati gracza 1 , [id]:3 przemiescila sie na pole: 5, 5.
+Jednostka Cingetos gracza 2 , [id]:9 przemiescila sie na pole: 10, 10.
+Jednostka Cingetos gracza 2 , [id]:8 przemiescila sie na pole: 9, 10.
+Jednostka Cingetos gracza 2 , [id]:7 przemiescila sie na pole: 8, 10.
+Jednostka Cingetos gracza 2 , [id]:6 przemiescila sie na pole: 7, 10.
+Jednostka Cingetos gracza 2 , [id]:4 przemiescila sie na pole: 6, 10.
+Jednostka Cingetos gracza 2 , [id]:3 przemiescila sie na pole: 5, 10.
+Jednostka Cingetos gracza 2 , [id]:2 przemiescila sie na pole: 4, 10.
+Jednostka Cingetos gracza 2 , [id]:1 przemiescila sie na pole: 3, 10.
+Jednostka Sotaroas gracza 2 , [id]:5 przemiescila sie na pole: 6, 11.
+Jednostka Solduros gracza 2 , [id]:0 przemiescila sie na pole: 4, 11.
+Jednostka Evocati gracza 1 , [id]:11 przemiescila sie na pole: 12, 5.
+Jednostka Evocati gracza 1 , [id]:9 przemiescila sie na pole: 10, 5.
+Jednostka Evocati gracza 1 , [id]:8 przemiescila sie na pole: 9, 5.
+Jednostka Evocati gracza 1 , [id]:7 przemiescila sie na pole: 8, 5.
+Jednostka Evocati gracza 1 , [id]:6 przemiescila sie na pole: 7, 5.
+Jednostka Sagittari_Auxilari gracza 1 , [id]:5 przemiescila sie na pole: 6, 5.
+Jednostka Evocati gracza 1 , [id]:4 przemiescila sie na pole: 5, 5.
+Jednostka Evocati gracza 1 , [id]:3 przemiescila sie na pole: 4, 5.
+Jednostka Catapulta gracza 1 , [id]:10 przemiescila sie na pole: 12, 3.
+SCREEN HEIGHT: 768, SCREEN WIDTH: 1366 
+ MAX MAP HEIGHT: 200, MAX MAP WIDTH: 200 
+ SIZE OF UNIT STRUCT: 264, SIZE OF UNIT TYPE STRUCT: 56, SIZE OF TERRAIN STRUCT: 28 
+ POPRAWNA INICJALIZACJA

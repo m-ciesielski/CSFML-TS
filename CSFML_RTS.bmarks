@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="auxilary.c" open="1" top="0" tabpos="9">
+		<Cursor position="738" topLine="0" />
+	</File>
+	<File name="combat.c" open="1" top="0" tabpos="10">
+		<Cursor position="8651" topLine="244" />
+	</File>
+	<File name="definicje_typow.h" open="1" top="1" tabpos="5">
+		<Cursor position="228" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="flora.c" open="0" top="0" tabpos="13">
+		<Cursor position="429" topLine="13" />
+	</File>
+	<File name="lib.h" open="1" top="0" tabpos="3">
+		<Cursor position="6141" topLine="37" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="log.c" open="1" top="0" tabpos="6">
+		<Cursor position="495" topLine="0" />
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="2">
+		<Cursor position="179" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="map.c" open="1" top="0" tabpos="1">
+		<Cursor position="605" topLine="48" />
+	</File>
+	<File name="mech.c" open="1" top="0" tabpos="8">
+		<Cursor position="13145" topLine="277" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="menu.c" open="1" top="0" tabpos="4">
+		<Cursor position="364" topLine="0" />
+	</File>
+	<File name="messages.c" open="0" top="0" tabpos="12">
+		<Cursor position="557" topLine="0" />
+	</File>
+	<File name="movement.c" open="0" top="0" tabpos="11">
+		<Cursor position="2284" topLine="154" />
+	</File>
+	<File name="UI.c" open="1" top="0" tabpos="7">
+		<Cursor position="219" topLine="12" />
+	</File>
+</BrowseTracker_layout_file>

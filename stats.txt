@@ -1,0 +1,85 @@
+Cingetos
+men  80
+melee_att  70
+melee_def  65
+speed  4
+morale  60
+ammo  2
+ranged_att  50 
+range 2
+command 0
+END
+
+Sotaroas
+men  80
+melee_att  30
+melee_def  20
+speed  4
+morale  50
+ammo  30
+range 5
+ranged_att  50 
+command 0
+END
+
+Solduros
+men 60
+melee_att 75
+melee_def 70
+speed 4
+morale 80
+ammo 0
+ranged_att 0
+command_range 3
+command 1
+range 0
+END
+
+Evocati
+men 80
+melee_att 70
+melee_def 75
+ranged_att 50
+range 2
+speed 4 
+ammo 2
+morale 60
+command 0
+END
+
+Pedites_Singulares
+men 40 
+melee_att 70
+melee_def 75
+ranged_att 50
+speed 4
+ammo 2
+range 2
+morale 80
+command 1
+command_range 3
+END
+
+Sagittari_Auxilari
+men  80
+melee_att  30
+melee_def  20
+speed  4
+morale  50
+ammo  30
+ranged_att  50
+range 5
+END
+
+Catapulta
+men  4
+melee_att 10
+melee_def  10
+speed  2
+morale  50
+ammo  10
+ranged_att  60
+range 8
+END
+
+END_OF_STATS
