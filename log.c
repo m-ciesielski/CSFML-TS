@@ -9,10 +9,12 @@ log_list add_log_string (char add_text[MAX_STRING_LENGTH], log_list game_log)
 	aux=(struct lista*)(malloc(sizeof(struct lista)));
 
 	if(game_log==NULL)
-	aux->next=NULL;
+        aux->next=NULL;
+
 	strcpy(aux->text, add_text);
+
 	if(game_log!=NULL)
-	  aux->next=game_log;
+        aux->next=game_log;
 
 	  return aux;
 }

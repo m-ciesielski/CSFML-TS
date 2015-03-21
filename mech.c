@@ -19,8 +19,8 @@ void update_vertex_array (int v_size ,sfVertexArray* v_array,
     else
         quad_count=v_size;
 
-        sfVertex temp_vertex;
-            for(i=0;i<(quad_count);++i)
+    sfVertex temp_vertex;
+    for(i=0;i<(quad_count);++i)
         {
             temp_vertex.position.x=position.x+(i%10)*vertex_tile;
             temp_vertex.position.y=position.y+(i/10)*vertex_tile;
@@ -55,7 +55,7 @@ void update_vertex_array (int v_size ,sfVertexArray* v_array,
 /**
 *Assign units selected in menu to units array. Had to be reworked.
 **/
-void assign_selected_units (unit unit_list[MAX_UNITS], int army_size, faction* army_faction)
+void assign_selected_units (Unit unit_list[MAX_UNITS], int army_size, Faction* army_faction)
 {
 int i;
 
@@ -63,8 +63,8 @@ int i;
     for(i=0;i<army_size;++i)
     {
         if(i==0)
-        unit_list[i].type=army_faction->unit_list[1];
-       else if(i%10==0 && strcmp(unit_list[0].type->name, "Pedites Singulares")==0)
+            unit_list[i].type=army_faction->unit_list[1];
+        else if(i%10==0 && strcmp(unit_list[0].type->name, "Pedites Singulares")==0)
             unit_list[i].type=army_faction->unit_list[3];
         else if(i%5==0)
             unit_list[i].type=army_faction->unit_list[2];
@@ -82,7 +82,7 @@ int i;
 * health_bar_tex - health bar texture
 * ui_font - UI default font
 **/
-void create_army (short int army_size, unit unit_list[MAX_UNITS], sfVector2i deployment_pos, terrain g_map [max_map_h][max_map_w]
+void create_army (short int army_size, Unit unit_list[MAX_UNITS], sfVector2i deployment_pos, terrain g_map [max_map_h][max_map_w]
                   , sfTexture* health_bar_tex, sfFont* ui_font)
 {
     int i;
@@ -90,8 +90,8 @@ void create_army (short int army_size, unit unit_list[MAX_UNITS], sfVector2i dep
     infobox_size.x=map_block_w/2;
     infobox_size.y=map_block_h/2;
     sfColor box_transp;
-box_transp.a=100;
-box_transp.r=0;box_transp.g=0;box_transp.b=0;
+    box_transp.a=100;
+    box_transp.r=0;box_transp.g=0;box_transp.b=0;
 
     for(i=0;i<army_size;++i)
     {
@@ -131,16 +131,16 @@ box_transp.r=0;box_transp.g=0;box_transp.b=0;
 
         update_vertex_array(4*unit_list[i].men, unit_list[i].vertex_array, unit_list[i].position, unit_list[i].direction);
 //creating missile vertex array for ranged units
-if(unit_list[i].ranged_att>0)
-{
-    unit_list[i].missile_vertex_array= sfVertexArray_create();
-    sfVertexArray_setPrimitiveType(unit_list[i].missile_vertex_array, sfQuads);
+    if(unit_list[i].ranged_att>0)
+    {
+        unit_list[i].missile_vertex_array= sfVertexArray_create();
+        sfVertexArray_setPrimitiveType(unit_list[i].missile_vertex_array, sfQuads);
 
-    unit_list[i].missile_vertex_state.blendMode= sfBlendAlpha;
-    unit_list[i].missile_vertex_state.shader=NULL;
-    unit_list[i].missile_vertex_state.texture=unit_list[i].type->missile_texture;
-    unit_list[i].missile_vertex_state.transform=vertex_transform;
-}
+        unit_list[i].missile_vertex_state.blendMode= sfBlendAlpha;
+        unit_list[i].missile_vertex_state.shader=NULL;
+        unit_list[i].missile_vertex_state.texture=unit_list[i].type->missile_texture;
+        unit_list[i].missile_vertex_state.transform=vertex_transform;
+    }
     //hp bar
     unit_list[i].health_bar.shape=sfRectangleShape_create();
     unit_list[i].health_bar_position.x=unit_list[i].position.x;
@@ -173,7 +173,7 @@ if(unit_list[i].ranged_att>0)
 * army_size - number of units in army
 * unit_list - list of army units
 **/
-void destroy_army (short int army_size, unit unit_list[MAX_UNITS])
+void destroy_army (short int army_size, Unit unit_list[MAX_UNITS])
 {
     int i=0;
     for(i=0;i<army_size;++i)
@@ -197,7 +197,7 @@ void destroy_army (short int army_size, unit unit_list[MAX_UNITS])
 *
 **/
 
-short int game_mech (short int army_size, unit unit_list[MAX_UNITS], short int op_army_size,unit op_unit_list[MAX_UNITS],
+short int game_mech (short int army_size, Unit unit_list[MAX_UNITS], short int op_army_size,Unit op_unit_list[MAX_UNITS],
                  short int* execute_orders, short int* active_player, terrain g_map[max_map_h][max_map_w])
 {
     short int inactive_units_counter=0;
@@ -205,64 +205,62 @@ short int game_mech (short int army_size, unit unit_list[MAX_UNITS], short int o
     int i;
     //RUCH JEDNOSTEK
         //poczatek petli
-                    for(i=0;i<army_size;++i)
+    for(i=0;i<army_size;++i)
+    {
+
+        if(unit_list[i].men>0)
+        {
+
+            if (unit_list[i].attack_order==2 &&
+                ranged_combat_animation(&unit_list[i], op_unit_list[unit_list[i].combat_focus].position)==0))
             {
+                ranged_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
+                unit_list[i].draw_line=0;
+                unit_list[i].ammo=unit_list[i].ammo-1;
+                move_order_counter=move_order_counter+1;
+                g_map[unit_list[i].map_position.y][unit_list[i].map_position.x].occupation=1;
+            }
 
-                if(unit_list[i].men>0)
+            if(unit_list[i].move_order==1)//|| precise_distance(unit_list[i].position, unit_list[i].move_destination)==0) //wykonanie ruchu
+            {
+                if( movement(unit_list[i])==1) //zakonczenie ruchu i sprawdzenie czy wydany zostal rozkaz ataku
                 {
 
-                        if (unit_list[i].attack_order==2)
-                         {
-                                if(ranged_combat_animation(&unit_list[i], op_unit_list[unit_list[i].combat_focus].position)==0)
-                                {
-                                    ranged_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
-                                    unit_list[i].draw_line=0;
-                                    unit_list[i].ammo=unit_list[i].ammo-1;
-                                    move_order_counter=move_order_counter+1;
-                                    g_map[unit_list[i].map_position.y][unit_list[i].map_position.x].occupation=1;
-                                }
-                        }
-                    if(unit_list[i].move_order==1)//|| precise_distance(unit_list[i].position, unit_list[i].move_destination)==0) //wykonanie ruchu
-                {
-
-                        if( movement(unit_list[i])==1) //zakonczenie ruchu i sprawdzenie czy wydany zostal rozkaz ataku
-                        {
-
-                                unit_list[i].move_order=0;
-                                     deselect_unit(&unit_list[i]);
-                                 unit_list[i].draw_line=0;
+                    unit_list[i].move_order=0;
+                    deselect_unit(&unit_list[i]);
+                    unit_list[i].draw_line=0;
 
                                  //zmiana kierunku po wykonaniu ruchu
-                                 if(unit_list[i].attack_order==1)
-                                 {
-                                     unit_list[i].direction=unit_list[i].new_direction;
-                                      update_vertex_array(4*unit_list[i].men, unit_list[i].vertex_array,
-                                                                    sfSprite_getPosition( unit_list[i].sprite),  unit_list[i].direction);
-                                 }
+                    if(unit_list[i].attack_order==1)
+                    {
+                        unit_list[i].direction=unit_list[i].new_direction;
+                        update_vertex_array(4*unit_list[i].men, unit_list[i].vertex_array,
+                                            sfSprite_getPosition( unit_list[i].sprite),  unit_list[i].direction);
+                    }
                                 //aktualizacja pozycji
-                                unit_list[i].map_position.x=(int)unit_list[i].move_destination.x/(map_block_w);
-                                unit_list[i].map_position.y=(int)unit_list[i].move_destination.y/(map_block_h);
-                                unit_list[i].position.x=unit_list[i].move_destination.x;
-                                unit_list[i].position.y=unit_list[i].move_destination.y;
-                                g_map[unit_list[i].map_position.y][unit_list[i].map_position.x].occupation=1;
-                                move_order_counter=move_order_counter+1;
+                    unit_list[i].map_position.x=(int)unit_list[i].move_destination.x/(map_block_w);
+                    unit_list[i].map_position.y=(int)unit_list[i].move_destination.y/(map_block_h);
+                    unit_list[i].position.x=unit_list[i].move_destination.x;
+                    unit_list[i].position.y=unit_list[i].move_destination.y;
+                    g_map[unit_list[i].map_position.y][unit_list[i].map_position.x].occupation=1;
+                    move_order_counter=move_order_counter+1;
                                 //zapisanie ruchu do loga
-                                 char aux_txt[MAX_STRING_LENGTH];
-                                 sprintf(aux_txt, "Jednostka %s gracza %d , [id]:%d przemiescila sie na pole: %d, %d.",unit_list[i].type->name,*active_player, i, unit_list[i].map_position.x, unit_list[i].map_position.y);
-                                 game_log=add_log_string(aux_txt, game_log);
-                                 update_log_file(log_file, "logs/log.txt", game_log);
+                    char aux_txt[MAX_STRING_LENGTH];
+                    sprintf(aux_txt, "Jednostka %s gracza %d , [id]:%d przemiescila sie na pole: %d, %d.",unit_list[i].type->name,*active_player, i, unit_list[i].map_position.x, unit_list[i].map_position.y);
+                    game_log=add_log_string(aux_txt, game_log);
+                    update_log_file(log_file, "logs/log.txt", game_log);
                                 //wywolanie melee_combat
-                                if(unit_list[i].attack_order==1)
-                                    melee_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
+                    //if(unit_list[i].attack_order==1)
+                        //melee_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
                         }
 
                 }
-                    else if(unit_list[i].attack_order!=2)
-                    {
+                else if(unit_list[i].attack_order!=2)
+                {
 
-                        move_order_counter=move_order_counter+1;
+                    move_order_counter=move_order_counter+1;
 
-                    }
+                }
 
                 }
 
@@ -278,24 +276,24 @@ short int game_mech (short int army_size, unit unit_list[MAX_UNITS], short int o
             for(i=0;i<army_size;++i)
                 {
 
-                       if(unit_list[i].in_combat==1 && unit_list[i].men>0)
+                    if(unit_list[i].men>0  && unit_list[i].in_combat==1)
                     {
                         if(op_unit_list[unit_list[i].combat_focus].men>0 && op_unit_list[unit_list[i].combat_focus].in_combat==1)
-                       melee_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
-                       else if (op_unit_list[unit_list[i].combat_focus].men<=0)
-                       {
+                            melee_combat(&unit_list[i], &op_unit_list[unit_list[i].combat_focus]);
+                        else if (op_unit_list[unit_list[i].combat_focus].men<=0)
+                        {
                            unit_list[i].in_combat=0;
                            g_map[op_unit_list[unit_list[i].combat_focus].map_position.y][op_unit_list[unit_list[i].combat_focus].map_position.x].occupation=0;
-                       }
+                        }
 
                     }
                 }
-           *execute_orders=0;
-                    move_order_counter=0;
-                    if(*active_player==1)
-                    *active_player=2;
-                    else
-                    *active_player=1;
+            *execute_orders=0;
+            move_order_counter=0;
+            if(*active_player==1)
+                *active_player=2;
+            else
+                *active_player=1;
         }
 
             if(inactive_units_counter==army_size)
@@ -309,7 +307,7 @@ short int game_mech (short int army_size, unit unit_list[MAX_UNITS], short int o
 
 }
 
-void load_unit_stats(FILE* unit_def_file,char* unit_def_localisation, unit_type* type, char* unit_name)
+void load_unit_stats(FILE* unit_def_file,char* unit_def_localisation, Unit_type* type, char* unit_name)
 {
     unit_def_file=fopen(unit_def_localisation, "r");
     char string_bufor [20];
@@ -317,7 +315,7 @@ void load_unit_stats(FILE* unit_def_file,char* unit_def_localisation, unit_type*
     //fscanf(unit_def_file, "%s", string_bufor);
 
     while(strcmp(string_bufor, unit_name)!=0 && strcmp(string_bufor, "END_OF_STATS")!=0)
-    fscanf(unit_def_file, "%s", string_bufor);
+        fscanf(unit_def_file, "%s", string_bufor);
 
     strcpy(type->name, string_bufor);
     fscanf(unit_def_file, "%s", string_bufor);

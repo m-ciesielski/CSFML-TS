@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="auxilary.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="UI.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="738" topLine="0" />
+			<Cursor1 position="4664" topLine="158" />
 		</Cursor>
 	</File>
-	<File name="combat.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="auxilary.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8651" topLine="244" />
+			<Cursor1 position="738" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="definicje_typow.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="combat.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1329" topLine="15" />
+			<Cursor1 position="8475" topLine="187" />
 		</Cursor>
 	</File>
 	<File name="flora.c" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -23,47 +23,47 @@
 	</File>
 	<File name="lib.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5924" topLine="37" />
+			<Cursor1 position="7885" topLine="20" />
 		</Cursor>
 	</File>
-	<File name="log.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="log.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="495" topLine="0" />
+			<Cursor1 position="785" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="199" topLine="30" />
+			<Cursor1 position="9685" topLine="1399" />
 		</Cursor>
 	</File>
 	<File name="map.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="605" topLine="48" />
+			<Cursor1 position="5240" topLine="156" />
 		</Cursor>
 	</File>
-	<File name="mech.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="mech.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="12966" topLine="277" />
+			<Cursor1 position="13796" topLine="321" />
 		</Cursor>
 	</File>
 	<File name="menu.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="364" topLine="0" />
+			<Cursor1 position="11868" topLine="293" />
 		</Cursor>
 	</File>
-	<File name="messages.c" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="messages.c" open="1" top="1" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="557" topLine="0" />
+			<Cursor1 position="718" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="movement.c" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="movement.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2284" topLine="154" />
+			<Cursor1 position="799" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="UI.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="type_definitions.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="219" topLine="12" />
+			<Cursor1 position="4271" topLine="137" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

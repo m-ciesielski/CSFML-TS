@@ -1,25 +1,25 @@
 #include "lib.h"
 
-void create_main_menu (menu main_menu, short int screen_res_h, short int screen_res_w)
+void create_main_menu (Menu main_menu, short int screen_res_h, short int screen_res_w)
 {
-        sfVector2f main_menu_pos;
-main_menu_pos.x=screen_res_w/4;
-main_menu_pos.y=screen_res_h/4;
-sfVector2f main_menu_size;
-main_menu_size.x=screen_res_w/2;
-main_menu_size.y=screen_res_h/2;
+    sfVector2f main_menu_pos;
+    main_menu_pos.x=screen_res_w/4;
+    main_menu_pos.y=screen_res_h/4;
+    sfVector2f main_menu_size;
+    main_menu_size.x=screen_res_w/2;
+    main_menu_size.y=screen_res_h/2;
 
-sfVector2f button_pos;
-button_pos.x=main_menu_pos.x+main_menu_size.x/4;
-button_pos.y=main_menu_pos.y+main_menu_size.y/10;
+    sfVector2f button_pos;
+    button_pos.x=main_menu_pos.x+main_menu_size.x/4;
+    button_pos.y=main_menu_pos.y+main_menu_size.y/10;
 
-sfVector2f button_size;
-button_size.x=main_menu_size.x/2;
-button_size.y=main_menu_size.y/4;
+    sfVector2f button_size;
+    button_size.x=main_menu_size.x/2;
+    button_size.y=main_menu_size.y/4;
 
-sfVector2f text_pos;
-sfText_setString(main_menu.text[0], "Nowa gra");
-sfText_setString(main_menu.text[1], "Wyjscie");
+    sfVector2f text_pos;
+    sfText_setString(main_menu.text[0], "Nowa gra");
+    sfText_setString(main_menu.text[1], "Wyjscie");
 
     short int i;
     for(i=0; i<main_menu.button_count; ++i)
@@ -35,7 +35,7 @@ sfText_setString(main_menu.text[1], "Wyjscie");
 
 }
 
-void destroy_menu (menu main_menu, sfBool background)
+void destroy_menu (Menu main_menu, sfBool background)
 {
     short int i;
     if(background==1)
@@ -49,29 +49,30 @@ void destroy_menu (menu main_menu, sfBool background)
     }
 }
 
-void create_select_map_menu (menu select_map_menu, short int screen_res_h, short int screen_res_w)
+void create_select_map_menu (Menu select_map_menu, short int screen_res_h, short int screen_res_w)
 {
-        sfVector2f main_menu_pos;
-main_menu_pos.x=screen_res_w/4;
-main_menu_pos.y=screen_res_h/4;
-sfVector2f main_menu_size;
-main_menu_size.x=screen_res_w/2;
-main_menu_size.y=screen_res_h/2;
-sfRectangleShape_setPosition(select_map_menu.background, main_menu_pos);
-sfRectangleShape_setSize(select_map_menu.background, main_menu_size);
+    sfVector2f main_menu_pos;
+    main_menu_pos.x=screen_res_w/4;
+    main_menu_pos.y=screen_res_h/4;
 
-sfVector2f button_size;
-button_size.x=main_menu_size.x/4;
-button_size.y=main_menu_size.y/4;
+    sfVector2f main_menu_size;
+    main_menu_size.x=screen_res_w/2;
+    main_menu_size.y=screen_res_h/2;
+    sfRectangleShape_setPosition(select_map_menu.background, main_menu_pos);
+    sfRectangleShape_setSize(select_map_menu.background, main_menu_size);
 
-sfVector2f button_pos;
-button_pos.x=main_menu_pos.x;
-button_pos.y=main_menu_pos.y+main_menu_size.y/10;
+    sfVector2f button_size;
+    button_size.x=main_menu_size.x/4;
+    button_size.y=main_menu_size.y/4;
+
+    sfVector2f button_pos;
+    button_pos.x=main_menu_pos.x;
+    button_pos.y=main_menu_pos.y+main_menu_size.y/10;
 
 
-sfVector2f text_pos;
-sfText_setString(select_map_menu.text[0], "Enter");
-sfText_setString(select_map_menu.text[1], "...");
+    sfVector2f text_pos;
+    sfText_setString(select_map_menu.text[0], "Enter");
+    sfText_setString(select_map_menu.text[1], "...");
     short int i;
     for(i=0; i<select_map_menu.button_count; ++i)
     {
@@ -85,29 +86,29 @@ sfText_setString(select_map_menu.text[1], "...");
     }
 }
 
-void create_battle_menu (menu battle_menu, short int screen_res_h, short int screen_res_w)
+void create_battle_menu (Menu battle_menu, short int screen_res_h, short int screen_res_w)
 {
-        sfVector2f main_menu_pos;
-main_menu_pos.x=screen_res_w/4;
-main_menu_pos.y=screen_res_h-(screen_res_h/6);
-sfVector2f main_menu_size;
-main_menu_size.x=screen_res_w/2;
-main_menu_size.y=screen_res_h/6;
+    sfVector2f main_menu_pos;
+    main_menu_pos.x=screen_res_w/4;
+    main_menu_pos.y=screen_res_h-(screen_res_h/6);
+    sfVector2f main_menu_size;
+    main_menu_size.x=screen_res_w/2;
+    main_menu_size.y=screen_res_h/6;
 
-sfVector2f button_size;
-button_size.x=main_menu_size.x/4;
-button_size.y=main_menu_size.y/4;
+    sfVector2f button_size;
+    button_size.x=main_menu_size.x/4;
+    button_size.y=main_menu_size.y/4;
 
-sfVector2f button_pos;
-button_pos.x=(button_size.x);
-button_pos.y=main_menu_pos.y+main_menu_size.y/10;
+    sfVector2f button_pos;
+    button_pos.x=(button_size.x);
+    button_pos.y=main_menu_pos.y+main_menu_size.y/10;
 
 
-sfVector2f text_pos;
-sfText_setString(battle_menu.text[0], "Dalej");
-sfText_setString(battle_menu.text[1], "Wybierz mape");
-sfText_setString(battle_menu.text[2], "Generuj mape");
-sfText_setString(battle_menu.text[3], "Wstecz");
+    sfVector2f text_pos;
+    sfText_setString(battle_menu.text[0], "Dalej");
+    sfText_setString(battle_menu.text[1], "Wybierz mape");
+    sfText_setString(battle_menu.text[2], "Generuj mape");
+    sfText_setString(battle_menu.text[3], "Wstecz");
     short int i;
     for(i=0; i<4; ++i)
     {
@@ -121,24 +122,24 @@ sfText_setString(battle_menu.text[3], "Wstecz");
     }
     char str [30];
     sprintf(str, "Wysokosc mapy: %d", map_h);
-sfText_setString(battle_menu.text[4], str);
-sprintf(str, "Szerokosc mapy: %d", map_w);
-sfText_setString(battle_menu.text[5], str);
+    sfText_setString(battle_menu.text[4], str);
+    sprintf(str, "Szerokosc mapy: %d", map_w);
+    sfText_setString(battle_menu.text[5], str);
 
     for(i=4;i<6;++i)
     {
-    sfVector2f high_button_position;
-    high_button_position.x=button_size.x + (i-3)*(button_size.x+10);
-    high_button_position.y=button_size.y*2;
-    sfRectangleShape_setSize(battle_menu.button[i], button_size);
-    sfRectangleShape_setFillColor(battle_menu.button[i], sfWhite);
-    sfRectangleShape_setPosition(battle_menu.button[i], high_button_position );
-    sfText_setPosition(battle_menu.text[i], high_button_position);
+        sfVector2f high_button_position;
+        high_button_position.x=button_size.x + (i-3)*(button_size.x+10);
+        high_button_position.y=button_size.y*2;
+        sfRectangleShape_setSize(battle_menu.button[i], button_size);
+        sfRectangleShape_setFillColor(battle_menu.button[i], sfWhite);
+        sfRectangleShape_setPosition(battle_menu.button[i], high_button_position );
+        sfText_setPosition(battle_menu.text[i], high_button_position);
     }
 
 }
 
-void create_army_select_menu (menu army_select_menu,short int screen_res_h, short int screen_res_w)
+void create_army_select_menu (Menu army_select_menu,short int screen_res_h, short int screen_res_w)
 {
     sfVector2f button_size;
     button_size.x=screen_res_w/8;
@@ -245,16 +246,17 @@ void create_army_select_menu (menu army_select_menu,short int screen_res_h, shor
 
 }
 
-void create_end_game_menu (menu end_game_menu,short int screen_res_h, short int screen_res_w, char* message_text )
+void create_end_game_menu (Menu end_game_menu,short int screen_res_h, short int screen_res_w, char* message_text )
 {
-            sfVector2f main_menu_pos;
-main_menu_pos.x=screen_res_w/4;
-main_menu_pos.y=screen_res_h/4;
-sfVector2f main_menu_size;
-main_menu_size.x=screen_res_w/2;
-main_menu_size.y=screen_res_h/2;
-sfRectangleShape_setPosition(end_game_menu.background, main_menu_pos);
-sfRectangleShape_setSize(end_game_menu.background, main_menu_size);
+    sfVector2f main_menu_pos;
+    main_menu_pos.x=screen_res_w/4;
+    main_menu_pos.y=screen_res_h/4;
+
+    sfVector2f main_menu_size;
+    main_menu_size.x=screen_res_w/2;
+    main_menu_size.y=screen_res_h/2;
+    sfRectangleShape_setPosition(end_game_menu.background, main_menu_pos);
+    sfRectangleShape_setSize(end_game_menu.background, main_menu_size);
     sfVector2f button_size;
     button_size.x=screen_res_w/8;
     button_size.y=screen_res_h/24;
@@ -271,7 +273,7 @@ sfRectangleShape_setSize(end_game_menu.background, main_menu_size);
         text_pos.x=button_pos.x+button_size.x/4;
         text_pos.y=button_pos.y+button_size.y/10;
         if (i!=0)
-        sfRectangleShape_setSize(end_game_menu.button[i], button_size);
+            sfRectangleShape_setSize(end_game_menu.button[i], button_size);
         sfRectangleShape_setFillColor(end_game_menu.button[i], sfWhite);
         sfRectangleShape_setPosition(end_game_menu.button[i], button_pos );
         sfText_setPosition(end_game_menu.text[i], text_pos);
@@ -285,8 +287,8 @@ sfRectangleShape_setSize(end_game_menu.background, main_menu_size);
 
 void get_text_input (sfEvent event, sfText* text)
 {
-char txt[100];
-int converted=event.text.unicode;
+        char txt[100];
+        int converted=event.text.unicode;
         sprintf(txt,"%s%c", sfText_getString(text),converted);
         sfText_setString(text,txt);
 }
@@ -301,19 +303,23 @@ void destroy_menu_resources (sfRectangleShape* main_background,
 
 short int button_pressed (sfVector2i mouse_pos, sfRectangleShape* button)
 {
-    if(mouse_pos.x>=sfRectangleShape_getPosition(button).x && mouse_pos.x<=sfRectangleShape_getPosition(button).x+sfRectangleShape_getSize(button).x
-    && mouse_pos.y>=sfRectangleShape_getPosition(button).y && mouse_pos.y<=sfRectangleShape_getPosition(button).y+sfRectangleShape_getSize(button).y)
-        return 1;
+    if(mouse_pos.x>=sfRectangleShape_getPosition(button).x
+        && mouse_pos.x<=sfRectangleShape_getPosition(button).x+sfRectangleShape_getSize(button).x
+        && mouse_pos.y>=sfRectangleShape_getPosition(button).y
+        && mouse_pos.y<=sfRectangleShape_getPosition(button).y+sfRectangleShape_getSize(button).y)
+            return 1;
     else
-        return 0;
+            return 0;
 }
 
 short int button_pressed_2f (sfVector2f mouse_pos, sfRectangleShape* button)
 {
-    if(mouse_pos.x>=sfRectangleShape_getPosition(button).x && mouse_pos.x<=sfRectangleShape_getPosition(button).x+sfRectangleShape_getSize(button).x
-    && mouse_pos.y>=sfRectangleShape_getPosition(button).y && mouse_pos.y<=sfRectangleShape_getPosition(button).y+sfRectangleShape_getSize(button).y)
-        return 1;
+    if(mouse_pos.x>=sfRectangleShape_getPosition(button).x
+        && mouse_pos.x<=sfRectangleShape_getPosition(button).x+sfRectangleShape_getSize(button).x
+        && mouse_pos.y>=sfRectangleShape_getPosition(button).y
+        && mouse_pos.y<=sfRectangleShape_getPosition(button).y+sfRectangleShape_getSize(button).y)
+            return 1;
     else
-        return 0;
+            return 0;
 }
 

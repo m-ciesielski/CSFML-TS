@@ -1,10 +1,10 @@
 
 #include "lib.h"
-void create_attack_orders(short int army_size, unit unit_list[MAX_UNITS], short int op_army_size,
-                          unit op_unit_list[MAX_UNITS] ,sfVector2f mouse_pos, terrain g_map[max_map_h][max_map_w], short int direction,
+#define COMMAND_MORALE_BONUS 1
+void create_attack_orders(short int army_size, Unit unit_list[MAX_UNITS], short int op_army_size,
+                          Unit op_unit_list[MAX_UNITS] ,sfVector2f mouse_pos, terrain g_map[max_map_h][max_map_w], short int direction,
                           short int attack_mode)
 {
-    short int legitAttack=0;
     short int i,j , dir_x, dir_y;
     if(direction==0)
     {
@@ -30,11 +30,16 @@ void create_attack_orders(short int army_size, unit unit_list[MAX_UNITS], short 
     sfVector2f move_vector;
     move_vector.x=mouse_pos.x-(map_block_w*(-(dir_x)));
     move_vector.y=mouse_pos.y-(map_block_h*(-(dir_y)));
+
 if(g_map[(int)((move_vector.y)/map_block_h)][(int)((move_vector.x)/map_block_w)].occupation==0 && attack_mode==0)
 create_movement_orders(army_size,unit_list,move_vector, g_map);
+
     for(i=0;i<army_size;++i)
     {
-        if(unit_list[i].in_combat==0 && unit_list[i].selected==1 && unit_list[i].men>0 &&g_map[(int)(unit_list[i].move_destination.y/map_block_h)][(int)(unit_list[i].move_destination.x/map_block_w)].occupation==0)
+        if( unit_list[i].men>0
+           && unit_list[i].selected==1
+           && unit_list[i].in_combat==0
+            &&g_map[(int)(unit_list[i].move_destination.y/map_block_h)][(int)(unit_list[i].move_destination.x/map_block_w)].occupation==0)
         {
 
             for(j=0;j<op_army_size;++j)
@@ -46,7 +51,6 @@ create_movement_orders(army_size,unit_list,move_vector, g_map);
                     {
                         unit_list[i].attack_order=1;
                         op_unit_list[j].combat_focus=i;
-                        legitAttack=1;
                    // else if(op_unit_list[j].in_combat==0)
                        // op_unit_list[j].flanked=0;
                     }
@@ -57,17 +61,15 @@ create_movement_orders(army_size,unit_list,move_vector, g_map);
                         unit_list[i].missile_position.y= unit_list[i].position.y;
                         unit_list[i].move_order=0;
                         unit_list[i].attack_order=2;
-                        legitAttack=1;
                     }
-                    if(legitAttack==1)
-                    {
+
                         unit_list[i].combat_focus=j;
                     sfVector2f line_dest;
                     line_dest.x=op_unit_list[j].position.x-(-dir_x*map_block_w/2);
                     line_dest.y=op_unit_list[j].position.y-(-dir_y*map_block_h/2);
-                    create_ord_line(&unit_list[i], line_dest, sfRed);
+                    create_order_line(&unit_list[i], line_dest, sfRed);
                     unit_list[i].new_direction=(direction+2)%4;
-                    }
+
 
                 }
             }
@@ -78,38 +80,38 @@ create_movement_orders(army_size,unit_list,move_vector, g_map);
 
 short int attack_direction (sfVector2f mouse_pos, terrain terr)
 {
-short int direction;
-sfVector2f dir_points [4];
-//zachod
-dir_points[3].x=terr.position.x;
-dir_points[3].y=terr.position.y+map_block_h/2;
-//polnoc
-dir_points[0].x=terr.position.x+map_block_w/2;
-dir_points[0].y=terr.position.y;
-//poludnie
-dir_points[2].x=terr.position.x+map_block_w/2;
-dir_points[2].y=terr.position.y+map_block_h;
-//wschod
-dir_points[1].x=terr.position.x+map_block_w;
-dir_points[1].y=terr.position.y+map_block_h/2;
+    short int direction;
+    sfVector2f dir_points [4];
+    //zachod
+    dir_points[3].x=terr.position.x;
+    dir_points[3].y=terr.position.y+map_block_h/2;
+    //polnoc
+    dir_points[0].x=terr.position.x+map_block_w/2;
+    dir_points[0].y=terr.position.y;
+    //poludnie
+    dir_points[2].x=terr.position.x+map_block_w/2;
+    dir_points[2].y=terr.position.y+map_block_h;
+    //wschod
+    dir_points[1].x=terr.position.x+map_block_w;
+    dir_points[1].y=terr.position.y+map_block_h/2;
 
-float distance_to_points [4];
-short int i;
-float min_distance=0;
-for(i=0;i<4;++i)
-{
-    distance_to_points[i]=precise_distance(mouse_pos, dir_points[i]);
-    if(distance_to_points[i]<=min_distance ||min_distance==0)
+    float distance_to_points [4];
+    short int i;
+    float min_distance=0;
+    for(i=0;i<4;++i)
     {
-        min_distance=distance_to_points[i];
-        direction=i;
+        distance_to_points[i]=precise_distance(mouse_pos, dir_points[i]);
+        if(distance_to_points[i]<=min_distance ||min_distance==0)
+        {
+            min_distance=distance_to_points[i];
+            direction=i;
+        }
+
     }
-
-}
-return direction;
+    return direction;
 }
 
-void melee_combat(unit* att_unit, unit* def_unit)
+void melee_combat(Unit* att_unit, Unit* def_unit)
 {
     //WARTOSCI OBRAZEN
     float att_damage=0, def_damage=0;
@@ -165,10 +167,10 @@ void melee_combat(unit* att_unit, unit* def_unit)
     update_log_file(log_file, "logs/log.txt", game_log);
 
      update_vertex_array(4*att_unit->men,att_unit->vertex_array, sfSprite_getPosition(att_unit->sprite), att_unit->direction);
-     update_vertex_array(4*def_unit->men,def_unit->vertex_array, sfSprite_getPosition(def_unit->sprite),def_unit->direction);
+     update_vertex_array(4*def_unit->men,def_unit->vertex_array, sfSprite_getPosition(def_unit->sprite), def_unit->direction);
 }
 //TODO: ustawianie flagi ataku rozkazu na 0 etc
-void ranged_combat (unit* att_unit, unit* def_unit)
+void ranged_combat (Unit* att_unit, Unit* def_unit)
 {
     float att_damage=0;
     att_damage=(att_unit->men*att_unit->ranged_att)/200;
@@ -178,13 +180,14 @@ void ranged_combat (unit* att_unit, unit* def_unit)
     att_unit->attack_order=0;
     //zapisanie do loga
     char aux_txt[MAX_STRING_LENGTH];
-                                 sprintf(aux_txt, "Jednostka %s, ostrzelala jednostke %s, zadaj¹c %d obra¿eñ.",att_unit->type->name,def_unit->type->name, (int)att_damage);
-                                 game_log=add_log_string(aux_txt, game_log);
-                                 update_log_file(log_file, "logs/log.txt", game_log);
+    sprintf(aux_txt, "Jednostka %s, ostrzelala jednostke %s, zadaj¹c %d obra¿eñ.",
+            att_unit->type->name,def_unit->type->name, (int)att_damage);
+    game_log=add_log_string(aux_txt, game_log);
+    update_log_file(log_file, "logs/log.txt", game_log);
     update_vertex_array(4*def_unit->men,def_unit->vertex_array, sfSprite_getPosition(def_unit->sprite), def_unit->direction);
 }
 
-int ranged_combat_animation (unit* unit1, sfVector2f destination)
+int ranged_combat_animation (Unit* unit1, sfVector2f destination)
 {
     sfVector2f move_vector;
 
@@ -211,7 +214,7 @@ int ranged_combat_animation (unit* unit1, sfVector2f destination)
 }
 
 
-void command_morale_bonus (int army_size, unit unit_list[army_size])
+void apply_command_morale_bonus (int army_size, Unit unit_list[army_size])
 {
     int i, j;
     for(i=0;i<army_size;++i)
@@ -221,9 +224,9 @@ void command_morale_bonus (int army_size, unit unit_list[army_size])
             for(j=0;j<army_size;++j)
             {
                 if(unit_list[j].men>0 &&
-                   distance(unit_list[i].map_position, unit_list[j].map_position.x, unit_list[j].map_position.y)<unit_list[i].type->command_range
+                   distance(unit_list[i].map_position, unit_list[j].map_position.x, unit_list[j].map_position.y) <u nit_list[i].type->command_range
                    && unit_list[j].morale<(unit_list[j].type->morale+10))
-                    unit_list[j].morale=unit_list[j].morale+1;
+                    unit_list[j].morale=unit_list[j].morale+COMMAND_MORALE_BONUS;
             }
         }
     }

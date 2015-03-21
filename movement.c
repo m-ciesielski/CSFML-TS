@@ -1,71 +1,72 @@
 
 #include "lib.h"
-
-void movement_order (terrain g_map [max_map_h][max_map_w], unit* unit1, sfVector2f mouse_pos)
+#define MOVEMENT_DELTA 4
+void movement_order (terrain g_map [max_map_h][max_map_w], Unit* unit1, sfVector2f mouse_pos)
 {
     if((unit1->move_destination.x!=mouse_pos.x ||unit1->move_destination.y!=mouse_pos.y)&& g_map[(int)((mouse_pos.y)/(map_block_h))][(int)((mouse_pos.x)/(map_block_w))].occupation==0)
     {
-         g_map[unit1->map_position.y][unit1->map_position.x].occupation=0;
+        g_map[unit1->map_position.y][unit1->map_position.x].occupation=0;
         unit1->move_destination.x= ((int)((mouse_pos.x)/(map_block_w)))*map_block_w;
-                        unit1->move_destination.y= ((int)((mouse_pos.y)/(map_block_h)))*map_block_h;
-                        create_ord_line(unit1, unit1->move_destination, sfGreen);
-                        unit1->draw_line=1;
-                        unit1->move_order=1;
-                        if(unit1->in_combat==1)
-                        {
-                          unit1->in_combat=0;
-
-                        }
-
-    }
-
-}
-
-short int create_movement_list (short int army_size,unit army_list [MAX_UNITS], int movement_list [army_size], int dest_x, int dest_y)
-{
-int i,j=0;
-
-int temp;
-short int units_to_move=0;
-for(i=0; i<army_size;++i)
-{
-    if(army_list[i].selected==1 && army_list[i].men>0)
-    {
-        movement_list[j]=i;
-        units_to_move=units_to_move+1;
-        ++j;
-    }
-
-}
-int n=units_to_move;
-if(units_to_move>1)
-{
-        while(n>1)
-    {
-        for(i=0;i<(units_to_move-1);++i)
+        unit1->move_destination.y= ((int)((mouse_pos.y)/(map_block_h)))*map_block_h;
+        create_order_line(unit1, unit1->move_destination, sfGreen);
+        unit1->draw_line=1;
+        unit1->move_order=1;
+        if(unit1->in_combat==1)
         {
-            if(distance(army_list[movement_list[i]].map_position, dest_x, dest_y)>distance(army_list[movement_list[i+1]].map_position, dest_x, dest_y) )
-            {
-                temp=movement_list[i];
-                movement_list[i]=movement_list[i+1];
-                movement_list[i+1]=temp;
-            }
+            unit1->in_combat=0;
+
         }
-        n=n-1;
+
     }
-}
-    return units_to_move;
+
 }
 
-int movement (unit unit1)
+short int create_movement_list (short int army_size,Unit army_list [MAX_UNITS], int movement_list [army_size], int dest_x, int dest_y)
 {
-                sfVector2f move_vector;
+    int i,j=0;
 
-                unit1.health_bar_position.x=sfSprite_getPosition(unit1.sprite).x;
-unit1.health_bar_position.y=sfSprite_getPosition(unit1.sprite).y-25;
-sfRectangleShape_setPosition(unit1.health_bar.shape, unit1.health_bar_position);
-unit1.health_bar_position.y=unit1.health_bar_position.y-20;
-sfText_setPosition(unit1.health_bar.text, unit1.health_bar_position);
+    int temp;
+    short int units_to_move=0;
+    for(i=0; i<army_size;++i)
+    {
+        if(army_list[i].men>0  && army_list[i].selected==1)
+        {
+            movement_list[j]=i;
+            units_to_move=units_to_move+1;
+            ++j;
+        }
+
+    }
+    int n=units_to_move;
+    //Sorting movement list by distance  to destination
+    if(units_to_move>1)
+    {
+            while(n>1)
+        {
+            for(i=0;i<(units_to_move-1);++i)
+            {
+                if(distance(army_list[movement_list[i]].map_position, dest_x, dest_y)> distance(army_list[movement_list[i+1]].map_position, dest_x, dest_y) )
+                {
+                    temp=movement_list[i];
+                    movement_list[i]=movement_list[i+1];
+                    movement_list[i+1]=temp;
+                }
+            }
+            n=n-1;
+        }
+    }
+        return units_to_move;
+}
+
+int movement (Unit unit1)
+{
+    sfVector2f move_vector;
+
+    unit1.health_bar_position.x=sfSprite_getPosition(unit1.sprite).x;
+    unit1.health_bar_position.y=sfSprite_getPosition(unit1.sprite).y-25;
+    sfRectangleShape_setPosition(unit1.health_bar.shape, unit1.health_bar_position);
+    unit1.health_bar_position.y=unit1.health_bar_position.y-20;
+    sfText_setPosition(unit1.health_bar.text, unit1.health_bar_position);
                 /*Ustalanie wektora ruchu */
                 /*
                 if(unit1.move_destination.x<map_block_w)
@@ -73,24 +74,24 @@ sfText_setPosition(unit1.health_bar.text, unit1.health_bar_position);
                     move_vector.x=-1;
                 }
                 */
-                if(unit1.move_destination.x==sfSprite_getPosition(unit1.sprite).x)
-                    move_vector.x=0;
-                else
-                {
-                        if(unit1.move_destination.x>sfSprite_getPosition(unit1.sprite).x)
-                        move_vector.x=4;
-                        else
-                        move_vector.x=-4;
+    if(unit1.move_destination.x==sfSprite_getPosition(unit1.sprite).x)
+        move_vector.x=0;
+    else
+        {
+            if(unit1.move_destination.x>sfSprite_getPosition(unit1.sprite).x)
+                move_vector.x=MOVEMENT_DELTA;
+            else
+                move_vector.x=-MOVEMENT_DELTA;
 
-                }
+        }
                 if(unit1.move_destination.y==sfSprite_getPosition(unit1.sprite).y)
-                    move_vector.y=0;
+                    move_vector.y=MOVEMENT_DELTA;
                 else
                 {
                         if(unit1.move_destination.y>sfSprite_getPosition(unit1.sprite).y)
-                        move_vector.y=4;
+                        move_vector.y=MOVEMENT_DELTA;
                         else
-                        move_vector.y=-4;
+                        move_vector.y=-MOVEMENT_DELTA;
                 }
          if ((sfSprite_getPosition(unit1.sprite).x==unit1.move_destination.x && sfSprite_getPosition(unit1.sprite).y==unit1.move_destination.y))
        {
@@ -112,7 +113,7 @@ sfText_setPosition(unit1.health_bar.text, unit1.health_bar_position);
         }
 }
 
-void create_movement_orders (short int army_size, unit unit_list[MAX_UNITS], sfVector2f mouse_pos, terrain g_map[max_map_h][max_map_w])//, short int mode)
+void create_movement_orders (short int army_size, Unit unit_list[MAX_UNITS], sfVector2f mouse_pos, terrain g_map[max_map_h][max_map_w])//, short int mode)
 {
                     short int w=0;
                     short int i=0;
@@ -163,7 +164,7 @@ void create_movement_orders (short int army_size, unit unit_list[MAX_UNITS], sfV
                         }
 }
 
-sfBool check_movement_destination (short int army_size, unit unit_list[MAX_UNITS], int dest_y, int dest_x, int index)
+sfBool check_movement_destination (short int army_size, Unit unit_list[MAX_UNITS], int dest_y, int dest_x, int index)
 {
     short int i;
 

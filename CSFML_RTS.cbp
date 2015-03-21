@@ -62,7 +62,6 @@
 		<Unit filename="combat.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="definicje_typow.h" />
 		<Unit filename="flora.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -88,6 +87,7 @@
 		<Unit filename="movement.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="type_definitions.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

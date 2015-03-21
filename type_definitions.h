@@ -37,24 +37,24 @@ typedef struct
     short int ammo;
     unsigned short int range;
 
-} unit_type;
+} Unit_type;
 
 typedef struct
 {
    sfRectangleShape* shape;
    sfText* text;
-}unit_infobox;
+}Unit_infobox;
 
 typedef struct
 {
     sfRectangleShape* shape;
     sfText* text;
 
-}bar;
+}Bar;
 
 typedef struct
 {
-    unit_type* type;
+    Unit_type* type;
     sfSprite* sprite ;
     unsigned short int men; //liczba ludzi w jednostce
     sfVertexArray* vertex_array;
@@ -65,7 +65,7 @@ typedef struct
     sfVector2f position; //pozycja wektorowa
     sfVector2i map_position; // pozycja na tablicy mapy
     //UI dla jednostki
-    bar health_bar; //helath bar jednostki pokazujacy ilosc ludzi w jednostce
+    Bar health_bar; //helath bar jednostki pokazujacy ilosc ludzi w jednostce
     sfVector2f health_bar_size;
     sfVector2f health_bar_position;
     sfVertex line [2];
@@ -96,21 +96,20 @@ typedef struct
 
     short int morale; //morale jednostki
   //  short int formation; //formacja jednostki
-    /* op. przeniesienie ponizszych do unit_type*/
-    short int melee_att; //bazowa wartosc ataku wrecz - modyfikowana w funkcji melee combat
-    short int ranged_att; //bazowa wartosc ataku z dystansu- modyfikowana w funkcji melee combat
-    short int melee_def; //bazowa wartosc obrony w walce wrecz - modyfikowana w funkcji melee combat
-    short int ranged_def; //bazowa wartosc obrony w walce z dystansu- modyfikowana w funkcji melee combat
+    short int melee_att;
+    short int ranged_att;
+    short int melee_def;
+    short int ranged_def;
     short int ammo;
     short int speed; //szybkosc jednostki definiujaca ilosc pol jakie moze przebyc w czasie tury
     short int charge; //bonus szarzy dodawany do pierwszego ataku
     //short int flanked;
-    unit_infobox infobox;
+    Unit_infobox infobox;
     sfBool draw_infobox;
     sfBool draw_line;
     //-----------------
     sfVector2f move_destination; //cel ruchu
-}unit;
+}Unit;
 
 //UI
 
@@ -122,7 +121,7 @@ typedef struct
     unsigned short int button_count;
     sfText* text [MAX_MENU_BUTTONS];
     sfRectangleShape* button [MAX_MENU_BUTTONS];
-}menu;
+}Menu;
 
 typedef struct
 {
@@ -134,23 +133,23 @@ typedef struct
     sfVector2f camera_destination;
     sfText* text [MAX_MESSAGE_BUTTONS+1];
     sfRectangleShape* button [MAX_MESSAGE_BUTTONS];
-}message;
+}Message;
 
 typedef struct
 {
     char* name;
-    unit_type* unit_list [FACTION_MAX_UNITS];
+    Unit_type* unit_list [FACTION_MAX_UNITS];
     sfColor color;
-}faction;
+}Faction;
 
 typedef struct
 {
-    faction* p_faction;
+    Faction* p_faction;
     unsigned short int faction_index;
     //unit unit_list [MAX_UNITS];
     unsigned int army_size;
     //unsigned int selected_units [FACTION_MAX_UNITS];
-}player;
+}Player;
 
 typedef struct lista
 {

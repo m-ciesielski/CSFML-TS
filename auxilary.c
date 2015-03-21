@@ -1,7 +1,7 @@
 
 #include "lib.h"
 
-void set_army_direction (int army_size, unit unit_list[MAX_UNITS], short int direction)
+void set_army_direction (int army_size, Unit unit_list[MAX_UNITS], short int direction)
 {
     int i;
     for(i=0;i<army_size;++i)
@@ -21,8 +21,8 @@ float precise_distance (sfVector2f object1_pos, sfVector2f object2_pos)
 sfVector2f relative_position_vector (sfVector2f object1_pos, sfVector2f object2_pos)
 {
     sfVector2f rel;
-        rel.x=object2_pos.x-object1_pos.x;
-       rel.y=object2_pos.y-object1_pos.y;
+    rel.x=object2_pos.x-object1_pos.x;
+    rel.y=object2_pos.y-object1_pos.y;
     return rel;
 }
 
